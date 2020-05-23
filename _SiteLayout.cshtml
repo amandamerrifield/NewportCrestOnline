@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>@Page.Title - Newport Crest Online</title>
+
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+	<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+	<script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body style="width:768px; height:1025px;  background-color:#f0f0f5">
+	<header style="border-top: solid 3px midnightblue;">
+		<div class="row"  style="margin-left:0;">
+			<div class="column" >
+				<img class="mx-auto d-block" src="~/Images/westerngull.jpg" />
+				<p class="site-title" style="position:absolute; top:0px; left:0px;">Newport</p>
+				<p class="site-title" style="position:absolute; top:40px; left:30px;">Crest</p>
+				<p class="site-title" style="position:absolute; top:190px; left:240px;">Online</p>
+			</div>
+
+			<div class="stacked-nav" style="padding:18px 48px 12px 48px;">
+				<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+					<a class="btn btn-outline-primary border-dark" style="padding:12px;" href="~/Announcements.cshtml">Announcements / News</a>
+					<a class="btn btn-outline-primary border-dark" style="padding:12px;" href="~/Default.cshtml">Construction Committee</a>
+					<a class="btn btn-outline-primary border-dark" style="padding:12px;" href="~/Default.cshtml">Landscaping Committee</a>
+					<a class="btn btn-outline-primary border-dark" style="padding:12px;" href="~/Default.cshtml">Maintenance Database</a>
+					<a class="btn btn-outline-primary border-dark" style="padding:12px;" href="~/Default.cshtml">Social Committee</a>
+				</div>
+			</div>
+		</div>
+
+		@*<div class="content-wrapper">
+			<div class="float-right">
+				<section id="login">
+					@if (WebSecurity.IsAuthenticated) {
+						<text>
+							Hello, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
+							<form id="logoutForm" action="~/Account/Logout" method="post">
+								@AntiForgery.GetHtml()
+								<a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+							</form>
+						</text>
+					}
+					else {
+						<ul>
+							<li><a href="~/Account/Register">Register</a></li>
+							<li><a href="~/Account/Login">Log in</a></li>
+						</ul>
+					}
+				</section>
+				<nav>
+					<ul id="menu">
+						<li><a href="~/">Home</a></li>
+						<li><a href="~/About">About</a></li>
+						<li><a href="~/Contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>*@
+	</header>
+
+	<div id="body">
+		@RenderSection("featured", required: false)
+		@RenderBody()
+	</div>
+
+	<footer>
+		<div class="content-wrapper">
+			<div class="float-left" style="padding:9px 24px 9px 24px;">
+				<span style="font-size:small;">Newport Crest Online - <a href="~/About">About</a></span>
+				<span style="font-size:small; margin-left: 160px;"> &copy Soft Systems, Inc. 2020 - <a href="~/Contact.cshtml">Contact</a></span>
+			</div>
+		</div>
+	</footer>
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>
